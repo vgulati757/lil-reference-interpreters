@@ -23,7 +23,10 @@ app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
 // Allowed origins
-const allowedOrigins = ["http://localhost:5173"];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://lil-reference-interpreters-frontend.onrender.com",
+];
 
 // CORS options
 const corsOptions = {
