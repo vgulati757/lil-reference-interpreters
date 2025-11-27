@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /lilref/
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /lilref/index.html [L]
