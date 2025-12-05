@@ -23,6 +23,7 @@ function App() {
     translationOrTranscriptionWork: "",
     assistedForCourtPurposes: "",
     overallInterpretingHours: "",
+    otherComments: "",
 
     // Lower Part
     yourName: "",
@@ -154,6 +155,31 @@ function App() {
       await createInterpreter(formData);
       toast.success("Form Submitted Successfully!");
       setIsLoading(false);
+      setFormData({
+        // Top Part
+        interpreterTranslatorName: "",
+        languagesCovered: "",
+        dialectsCovered: "",
+
+        // Middle Part
+        capacityKnown: "",
+        commentonAbility: "",
+        durationAssisting: "",
+        serviceTypesProvided: "",
+        assistedLegalMedicalPublic: "",
+        translationOrTranscriptionWork: "",
+        assistedForCourtPurposes: "",
+        overallInterpretingHours: "",
+        otherComments: "",
+
+        // Lower Part
+        yourName: "",
+        position: "",
+        department: "",
+        companyName: "",
+        emailAddress: "",
+        contactNumber: "",
+      });
     } catch (error) {
       setIsLoading(false);
       toast.error(error.message);
@@ -292,7 +318,7 @@ function App() {
               {/* Comment on Ability */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="commentOnAbility">
-                  Comment about their ability{" "}
+                  Comment about their ability as an interpreter / translator{" "}
                   <span className="text-red-500">*</span>
                 </label>
 
@@ -316,8 +342,9 @@ function App() {
               {/* Duration Assisting */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="durationAssisting">
-                  How long have they been assisting as an interpreter /
-                  translator for you? <span className="text-red-500">*</span>
+                  How long have they been assisting your agency / firm as an
+                  interpreter / translator?{" "}
+                  <span className="text-red-500">*</span>
                 </label>
 
                 <textarea
@@ -340,7 +367,8 @@ function App() {
               {/* Services Types Provided */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="serviceTypesProvided">
-                  What services have they provided?
+                  What services have they provided?{" "}
+                  <span className="text-red-500">*</span>
                 </label>
 
                 <textarea
@@ -465,6 +493,23 @@ function App() {
                     {errors.overallInterpretingHours}
                   </p>
                 )}
+              </div>
+
+              {/* Other Comments */}
+              <div className="flex flex-col gap-2">
+                <label htmlFor="otherComments">
+                  Do you have any other comments?{" "}
+                  <span className="text-red-500">*</span>
+                </label>
+
+                <textarea
+                  onChange={handleFormData}
+                  value={formData.otherComments}
+                  name="otherComments"
+                  id="otherComments"
+                  rows={3}
+                  className={`p-2 outline-primary border-2 rounded-md border-gray-200`}
+                />
               </div>
             </div>
 

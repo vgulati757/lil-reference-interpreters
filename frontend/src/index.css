@@ -6,3 +6,9 @@
   --color-text: #191919;
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+.loader {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}

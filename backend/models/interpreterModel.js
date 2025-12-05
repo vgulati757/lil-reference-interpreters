@@ -54,6 +54,9 @@ const interpreterSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    otherComments: {
+type: String,
+    },
 
     // Reference provider details
     yourName: {
